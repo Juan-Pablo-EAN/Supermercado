@@ -1,6 +1,3 @@
-
-import javax.swing.JOptionPane;
-
 public class Empleado {
 
     private String nombre;
