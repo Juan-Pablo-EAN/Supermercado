@@ -156,12 +156,9 @@ public class ProyectoEmpleados {
                     default:
                         JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto");
                 }
-            } else {
-                JOptionPane.showInputDialog("Escribiste un nombre no registrado, revisa tu ortografía");
-            }
-            mostrar();
-            return; //este return es importante
+            } //si pongo return aca no me sale EL error pero solo me deja escoger el primer empleado
         }
+        return; //si pongo return aca me sale EL error
     }
 
     //método para mostrar todos los empleados
