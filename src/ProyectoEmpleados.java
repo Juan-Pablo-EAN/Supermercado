@@ -93,7 +93,7 @@ public class ProyectoEmpleados {
             } else if (eleccion == 4) {
                 posiciones();
             } else if (eleccion == 5) {
-                
+                cambiar();
             } else if (eleccion == 6) {
                 System.exit(0);
             } else {
@@ -113,6 +113,52 @@ public class ProyectoEmpleados {
         e.setSalario(salario);
         empleados[indice] = e; //se añade el empleado al array
         indice++;
+    }
+
+    public static void cambiar() {
+        String name = JOptionPane.showInputDialog("Escribe el nombre del empleado");
+        for (int j = 0; j <= empleados.length; j++) {
+            String name2 = empleados[j].getNombre();
+            if (name.equals(name2)) {
+                int eleccion3 = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dato deseas cambiar?\n"
+                        + "(Escribe el número que corresponda)\n"
+                        + "1. Nombre\n"
+                        + "2. Cedula\n"
+                        + "3. Departamento\n"
+                        + "4. Posición\n"
+                        + "5. Salario\n"));
+                switch (eleccion3) {
+                    case 1:
+                        String nombre2 = JOptionPane.showInputDialog("Escirbe el nuevo nombre de " + name);
+                        empleados[j].setNombre(nombre2);
+                        JOptionPane.showMessageDialog(null, "¡Nombre cambiado exitosamente!");
+                        break;
+                    case 2:
+                        int cedula2 = Integer.parseInt(JOptionPane.showInputDialog("Escirbe el nuevo nombre de " + name));
+                        empleados[j].setCedula(cedula2);
+                        JOptionPane.showMessageDialog(null, "¡Cedula cambiada exitosamente!");
+                        break;
+                    case 3:
+                        String dept2 = JOptionPane.showInputDialog("Escirbe el nuevo departamento de " + name);
+                        empleados[j].setDepartamento(dept2);
+                        JOptionPane.showMessageDialog(null, "¡Departamento cambiado exitosamente!");
+                        break;
+                    case 4:
+                        String pos2 = JOptionPane.showInputDialog("Escirbe la nueva posición de " + name);
+                        empleados[j].setPosicion(pos2);
+                        JOptionPane.showMessageDialog(null, "¡Posición cambiada exitosamente!");
+                        break;
+                    case 5:
+                        int salario2 = Integer.parseInt(JOptionPane.showInputDialog("Escirbe el nuevo salario de " + name));
+                        empleados[j].setSalario(salario2);
+                        JOptionPane.showMessageDialog(null, "¡Salario cambiado exitosamente!");
+                        break;
+                }
+            } else {
+                JOptionPane.showInputDialog("Algo fallo");
+            }
+            mostrar();
+        }
     }
 
     //método para mostrar todos los empleados
