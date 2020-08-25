@@ -65,5 +65,5 @@ public class Empleado {
         sb.append(salario);
         return sb.toString();
     }
-}//Fin de la Clase Empleado
+}
 

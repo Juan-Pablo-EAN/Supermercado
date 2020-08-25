@@ -104,20 +104,20 @@ public class ProyectoEmpleados {
 
     public static void arreglo() {
         Empleado e;
-        e = new Empleado(); //crear una nueva instancia de empleado
+        e = new Empleado(); 
 
         e.setNombre(nombre);
         e.setCedula(cedula);
         e.setDepartamento(departamento);
         e.setPosicion(posicion);
         e.setSalario(salario);
-        empleados[indice] = e; //se añade el empleado al array
+        empleados[indice] = e; 
         indice++;
     }
 
     public static void cambiar() {
         String name = JOptionPane.showInputDialog("Escribe el nombre del empleado");
-        for (int j = 0; j <= empleados.length; j++) {
+        for (int j = 0; j < empleados.length; j++) {
             String name2 = empleados[j].getNombre();
             if (name.equals(name2)) {
                 int eleccion3 = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dato deseas cambiar?\n"
@@ -153,11 +153,14 @@ public class ProyectoEmpleados {
                         empleados[j].setSalario(salario2);
                         JOptionPane.showMessageDialog(null, "¡Salario cambiado exitosamente!");
                         break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto");
                 }
             } else {
-                JOptionPane.showInputDialog("Algo fallo");
+                JOptionPane.showInputDialog("Escribiste un nombre no registrado, revisa tu ortografía");
             }
             mostrar();
+            return; //este return es importante
         }
     }
 
@@ -168,14 +171,9 @@ public class ProyectoEmpleados {
         }
     }
 
-    //método que devuelve el número total de empleados
-    public static int numeroDeEmpleados() {
-        return indice;
-    }
-
     public static void cuantos() {
         if ("Jefe".equals(posicion)) {
-            cantidadJ++; //CONTINUAR EN ESTA PARTE
+            cantidadJ++;
         } else if ("Ayudante".equals(posicion)) {
             cantidadA++;
         } else if ("Cajero".equals(posicion)) {
@@ -211,4 +209,4 @@ public class ProyectoEmpleados {
                 + "Salario total en Oficina es: $" + cantidadO + "\n");
     }
 
-}//Fin de la Clase Principal
+}
