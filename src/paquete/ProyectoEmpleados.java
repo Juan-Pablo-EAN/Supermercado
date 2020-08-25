@@ -1,4 +1,7 @@
+package paquete;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class ProyectoEmpleados {
@@ -28,30 +31,30 @@ public class ProyectoEmpleados {
         int eleccion3 = 0;
 
         do {
-            eleccion = Integer.parseInt(JOptionPane.showInputDialog(null,
+            eleccion = Integer.parseInt((String) JOptionPane.showInputDialog(null,
                     "Menu de Opciones\n\n"
                     + "1. Ingresar un nuevo empleado\n"
                     + "2. Mostrar los datos de los empleado\n"
                     + "3. Salarios por departamento\n"
                     + "4. Cantidad de empleados por posición\n"
                     + "5. Cambiar los datos de un empleado\n"
-                    + "6. Salir\n"));
+                    + "6. Salir\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
             if (eleccion == 1) {
                 do {
-                    n = Integer.parseInt(JOptionPane.showInputDialog("Número de empleados"));
+                    n = Integer.parseInt((String) JOptionPane.showInputDialog("Número de empleados"));
 
                 } while (n < 0 || n > cant);
 
                 for (i = 1; i <= n; i++) {
 
-                    nombre = JOptionPane.showInputDialog(null, "Nombre del empleado " + i);
-                    cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Cedula del empleado " + nombre));
-                    eleccion2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Departamento del empleado " + nombre + "\n"
+                    nombre = (String) JOptionPane.showInputDialog(null, "Nombre del empleado " + i, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null);
+                    cedula = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Cedula del empleado " + nombre, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                    eleccion2 = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Departamento del empleado " + nombre + "\n"
                             + "(Escribe el número que corresponda)\n"
                             + "1. Caja\n"
                             + "2. Distribución\n"
                             + "3. Domicilios\n"
-                            + "4. Oficina\n"));
+                            + "4. Oficina\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     if (eleccion2 == 1) {
                         departamento = "Caja";
                     } else if (eleccion2 == 2) {
@@ -61,14 +64,14 @@ public class ProyectoEmpleados {
                     } else if (eleccion2 == 4) {
                         departamento = "Oficina";
                     } else {
-                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta");
+                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
                     }
-                    eleccion3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Posición del empleado " + nombre
+                    eleccion3 = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Posición del empleado " + nombre
                             + "(Escribe el número que corresponda)\n"
                             + "1. Jefe\n"
                             + "2. Ayudante\n"
                             + "3. Cajero\n"
-                            + "4. Domiciliario\n"));
+                            + "4. Domiciliario\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     if (eleccion3 == 1) {
                         posicion = "Jefe";
                     } else if (eleccion3 == 2) {
@@ -78,9 +81,9 @@ public class ProyectoEmpleados {
                     } else if (eleccion3 == 4) {
                         posicion = "Domiciliario";
                     } else {
-                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta");
+                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
                     }
-                    salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario del empleado " + nombre));
+                    salario = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Salario del empleado " + nombre, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     arreglo();
                     contador();
                     cuantos();
@@ -97,7 +100,7 @@ public class ProyectoEmpleados {
             } else if (eleccion == 6) {
                 System.exit(0);
             } else {
-                JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta");
+                JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
             }
         } while (eleccion != 6);
     }
@@ -121,13 +124,13 @@ public class ProyectoEmpleados {
         while (j <= empleados.length) {
             String name2 = empleados[j].getNombre();
             if (name.equals(name2)) {
-                int eleccion3 = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Que dato deseas cambiar?\n"
+                int eleccion3 = Integer.parseInt((String) JOptionPane.showInputDialog(null, "¿Que dato deseas cambiar?\n"
                         + "(Escribe el número que corresponda)\n"
                         + "1. Nombre\n"
                         + "2. Cedula\n"
                         + "3. Departamento\n"
                         + "4. Posición\n"
-                        + "5. Salario\n"));
+                        + "5. Salario\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                 switch (eleccion3) {
                     case 1:
                         String nombre2 = JOptionPane.showInputDialog("Escirbe el nuevo nombre de " + name);
@@ -135,7 +138,7 @@ public class ProyectoEmpleados {
                         JOptionPane.showMessageDialog(null, "¡Nombre cambiado exitosamente!");
                         break;
                     case 2:
-                        int cedula2 = Integer.parseInt(JOptionPane.showInputDialog("Escirbe el nuevo nombre de " + name));
+                        int cedula2 = Integer.parseInt(JOptionPane.showInputDialog("Escirbe la nueva cedula de " + name));
                         empleados[j].setCedula(cedula2);
                         JOptionPane.showMessageDialog(null, "¡Cedula cambiada exitosamente!");
                         break;
@@ -155,7 +158,7 @@ public class ProyectoEmpleados {
                         JOptionPane.showMessageDialog(null, "¡Salario cambiado exitosamente!");
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto");
+                        JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto, revisa tu ortografía", "", JOptionPane.YES_NO_OPTION);
                 }
                 return;
             }
