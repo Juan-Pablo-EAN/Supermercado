@@ -1,6 +1,5 @@
 package paquete;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -38,7 +37,7 @@ public class ProyectoEmpleados {
                     + "3. Salarios por departamento\n"
                     + "4. Cantidad de empleados por posición\n"
                     + "5. Cambiar los datos de un empleado\n"
-                    + "6. Salir\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                    + "6. Salir\n", "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
             if (eleccion == 1) {
                 do {
                     n = Integer.parseInt((String) JOptionPane.showInputDialog("Número de empleados"));
@@ -47,14 +46,14 @@ public class ProyectoEmpleados {
 
                 for (i = 1; i <= n; i++) {
 
-                    nombre = (String) JOptionPane.showInputDialog(null, "Nombre del empleado " + i, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null);
-                    cedula = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Cedula del empleado " + nombre, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                    nombre = (String) JOptionPane.showInputDialog(null, "Nombre del empleado " + i, "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null);
+                    cedula = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Cedula del empleado " + nombre, "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     eleccion2 = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Departamento del empleado " + nombre + "\n"
                             + "(Escribe el número que corresponda)\n"
                             + "1. Caja\n"
                             + "2. Distribución\n"
                             + "3. Domicilios\n"
-                            + "4. Oficina\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                            + "4. Oficina\n", "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     if (eleccion2 == 1) {
                         departamento = "Caja";
                     } else if (eleccion2 == 2) {
@@ -64,14 +63,14 @@ public class ProyectoEmpleados {
                     } else if (eleccion2 == 4) {
                         departamento = "Oficina";
                     } else {
-                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
+                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "Supermercado Fontibón", JOptionPane.YES_NO_OPTION);
                     }
                     eleccion3 = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Posición del empleado " + nombre
                             + "(Escribe el número que corresponda)\n"
                             + "1. Jefe\n"
                             + "2. Ayudante\n"
                             + "3. Cajero\n"
-                            + "4. Domiciliario\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                            + "4. Domiciliario\n", "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     if (eleccion3 == 1) {
                         posicion = "Jefe";
                     } else if (eleccion3 == 2) {
@@ -81,9 +80,9 @@ public class ProyectoEmpleados {
                     } else if (eleccion3 == 4) {
                         posicion = "Domiciliario";
                     } else {
-                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
+                        JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "Supermercado Fontibón", JOptionPane.YES_NO_OPTION);
                     }
-                    salario = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Salario del empleado " + nombre, "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                    salario = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Salario del empleado " + nombre, "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                     arreglo();
                     contador();
                     cuantos();
@@ -100,7 +99,7 @@ public class ProyectoEmpleados {
             } else if (eleccion == 6) {
                 System.exit(0);
             } else {
-                JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "", JOptionPane.YES_NO_OPTION);
+                JOptionPane.showMessageDialog(null, "La elección que escogiste es incorrecta", "Supermercado Fontibón", JOptionPane.YES_NO_OPTION);
             }
         } while (eleccion != 6);
     }
@@ -130,7 +129,7 @@ public class ProyectoEmpleados {
                         + "2. Cedula\n"
                         + "3. Departamento\n"
                         + "4. Posición\n"
-                        + "5. Salario\n", "", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
+                        + "5. Salario\n", "Supermercado Fontibón", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/paquete/apple.png"), null, null));
                 switch (eleccion3) {
                     case 1:
                         String nombre2 = JOptionPane.showInputDialog("Escirbe el nuevo nombre de " + name);
@@ -161,6 +160,8 @@ public class ProyectoEmpleados {
                         JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto, revisa tu ortografía", "", JOptionPane.YES_NO_OPTION);
                 }
                 return;
+            } else {
+                JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto, revisa tu ortografía", "", JOptionPane.YES_NO_OPTION);
             }
             j++;
         }
@@ -212,3 +213,4 @@ public class ProyectoEmpleados {
     }
 
 }
+

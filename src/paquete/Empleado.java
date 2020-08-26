@@ -7,6 +7,10 @@ public class Empleado {
     private String departamento;
     private String posicion;
     private int salario;
+    
+    public Empleado(){
+        
+    }
 
     public String getNombre() {
         return nombre;
