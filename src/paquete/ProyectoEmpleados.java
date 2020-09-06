@@ -139,7 +139,7 @@ public class ProyectoEmpleados {
                 }
             } while (eleccion != 6);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrectoooooooo",
+            JOptionPane.showMessageDialog(null, "El valor que escribiste es incorrecto",
                     "Supermercado Fontibón", JOptionPane.YES_OPTION);
             return;
         }
@@ -214,7 +214,7 @@ public class ProyectoEmpleados {
             }
             j++;
         }
-        JOptionPane.showMessageDialog(null, "El nombre que escribirste es incorrecto",
+        JOptionPane.showMessageDialog(null, "El nombre que escribiste es incorrecto",
                 "Supermercado Fontibón", JOptionPane.YES_NO_OPTION);
     }
 
